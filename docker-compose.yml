@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  agi1-brain:
+    build: .
+    container_name: agi1_swarm_v1
+    restart: always
+    volumes:
+      - ./logs:/app/logs
+      - ./agi1_persistence.db:/app/agi1_persistence.db
+    environment:
+      - ENV=PRODUCTION
+      - CEO_DIRECTIVE=AUTONOMOUS
