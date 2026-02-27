@@ -1,0 +1,231 @@
+{
+  "system": {
+    "name": "OpenClaw Complete v2.0",
+    "version": "2.0.0",
+    "mode": "autonomous",
+    "approval_required": false,
+    "loop_interval_seconds": 30,
+    "max_concurrent_tasks": 8,
+    "report_interval_minutes": 15,
+    "ceo": {
+      "name": "Jack",
+      "email": "stilljack18@gmail.com",
+      "role": "Founder & CEO",
+      "notifications": ["console", "dashboard", "telegram"]
+    }
+  },
+  "providers": {
+    "anthropic": {
+      "base_url": "https://api.anthropic.com/v1",
+      "env_key": "ANTHROPIC_API_KEY",
+      "models": {
+        "opus": "claude-opus-4-6-20250929",
+        "sonnet": "claude-sonnet-4-5-20250929",
+        "haiku": "claude-haiku-4-5-20251001"
+      }
+    },
+    "openai": {
+      "base_url": "https://api.openai.com/v1",
+      "env_key": "OPENAI_API_KEY",
+      "models": {
+        "gpt5": "gpt-5.2",
+        "codex": "codex-5.3",
+        "o3": "o3-mini"
+      }
+    },
+    "google": {
+      "base_url": "https://generativelanguage.googleapis.com/v1beta",
+      "env_key": "GOOGLE_API_KEY",
+      "models": {
+        "gemini_pro": "gemini-3-pro",
+        "gemini_flash": "gemini-2.5-flash"
+      }
+    },
+    "internal": {
+      "base_url": "local",
+      "env_key": null,
+      "models": {
+        "openclaw": "openclaw-engine",
+        "ralph": "ralph-loop-v2"
+      }
+    }
+  },
+  "agents": [
+    {
+      "id": "opus_cairo",
+      "name": "Opus 4.6",
+      "role": "Chief AI Research Officer (CAIRO)",
+      "provider": "anthropic",
+      "model": "opus",
+      "responsibilities": [
+        "Deep research and analysis",
+        "Architecture decisions",
+        "Complex problem solving",
+        "Strategic AI guidance",
+        "Innovation and R&D direction"
+      ],
+      "skills": ["research", "analysis", "architecture", "strategy"],
+      "priority": 1,
+      "max_tokens": 8192,
+      "temperature": 0.7
+    },
+    {
+      "id": "sonnet_reviewer",
+      "name": "Sonnet 4.5",
+      "role": "Code Reviewer & Tester",
+      "provider": "anthropic",
+      "model": "sonnet",
+      "responsibilities": [
+        "Code review and quality assurance",
+        "Test generation and execution",
+        "Security auditing",
+        "Performance analysis",
+        "Deployment validation"
+      ],
+      "skills": ["code_review", "testing", "security", "deployment"],
+      "priority": 2,
+      "max_tokens": 8192,
+      "temperature": 0.3
+    },
+    {
+      "id": "gemini_cto",
+      "name": "Gemini 3 Pro",
+      "role": "Chief Technology Officer (CTO)",
+      "provider": "google",
+      "model": "gemini_pro",
+      "responsibilities": [
+        "Technology strategy and roadmap",
+        "System integration oversight",
+        "Technical debt management",
+        "Infrastructure decisions",
+        "Cross-platform compatibility"
+      ],
+      "skills": ["strategy", "integration", "infrastructure", "architecture"],
+      "priority": 2,
+      "max_tokens": 8192,
+      "temperature": 0.5
+    },
+    {
+      "id": "codex_dev",
+      "name": "CodeX 5.3",
+      "role": "Chief System Design & Data Officer",
+      "provider": "openai",
+      "model": "codex",
+      "responsibilities": [
+        "Code generation and debugging",
+        "System design implementation",
+        "Data pipeline architecture",
+        "Database schema design",
+        "API development"
+      ],
+      "skills": ["coding", "debugging", "data", "system_design", "api"],
+      "priority": 1,
+      "max_tokens": 16384,
+      "temperature": 0.2
+    },
+    {
+      "id": "gpt5_arch",
+      "name": "GPT 5.2",
+      "role": "Chief Architecture Officer",
+      "provider": "openai",
+      "model": "gpt5",
+      "responsibilities": [
+        "System architecture design",
+        "Scalability planning",
+        "Design pattern selection",
+        "Technical documentation",
+        "Architecture review"
+      ],
+      "skills": ["architecture", "scalability", "documentation", "design_patterns"],
+      "priority": 2,
+      "max_tokens": 8192,
+      "temperature": 0.4
+    },
+    {
+      "id": "openclaw_pm",
+      "name": "OpenClaw",
+      "role": "Head of Project & Product Manager",
+      "provider": "internal",
+      "model": "openclaw",
+      "responsibilities": [
+        "Project planning and tracking",
+        "Product roadmap management",
+        "Sprint planning and execution",
+        "Stakeholder communication",
+        "CEO reporting"
+      ],
+      "skills": ["project_management", "product", "planning", "reporting"],
+      "priority": 1,
+      "max_tokens": 4096,
+      "temperature": 0.5
+    },
+    {
+      "id": "claude_devops",
+      "name": "Claude Code",
+      "role": "DevOps & Deployment Engineer",
+      "provider": "anthropic",
+      "model": "sonnet",
+      "responsibilities": [
+        "CI/CD pipeline management",
+        "Deployment automation",
+        "Environment configuration",
+        "Monitoring setup",
+        "Infrastructure as code"
+      ],
+      "skills": ["devops", "deployment", "ci_cd", "monitoring"],
+      "priority": 3,
+      "max_tokens": 8192,
+      "temperature": 0.2
+    },
+    {
+      "id": "cowork_wf",
+      "name": "Cowork",
+      "role": "Workflow Manager",
+      "provider": "internal",
+      "model": "openclaw",
+      "responsibilities": [
+        "Task queue management",
+        "Workflow orchestration",
+        "Resource allocation",
+        "Dependency resolution",
+        "Progress tracking"
+      ],
+      "skills": ["workflow", "scheduling", "resource_mgmt", "tracking"],
+      "priority": 2,
+      "max_tokens": 4096,
+      "temperature": 0.3
+    },
+    {
+      "id": "ralph_loop",
+      "name": "Ralph Loop",
+      "role": "Autonomous Orchestrator",
+      "provider": "internal",
+      "model": "ralph",
+      "responsibilities": [
+        "Infinite loop orchestration",
+        "Task decomposition",
+        "Agent-task matching",
+        "Conflict resolution",
+        "System health monitoring"
+      ],
+      "skills": ["orchestration", "distribution", "monitoring", "optimization"],
+      "priority": 0,
+      "max_tokens": 4096,
+      "temperature": 0.3
+    }
+  ],
+  "task_routing": {
+    "research": ["opus_cairo", "gemini_cto"],
+    "coding": ["codex_dev", "gpt5_arch"],
+    "debugging": ["codex_dev", "sonnet_reviewer"],
+    "code_review": ["sonnet_reviewer", "opus_cairo"],
+    "testing": ["sonnet_reviewer", "claude_devops"],
+    "deployment": ["claude_devops", "sonnet_reviewer"],
+    "architecture": ["gpt5_arch", "gemini_cto", "opus_cairo"],
+    "project_management": ["openclaw_pm", "cowork_wf"],
+    "documentation": ["gpt5_arch", "openclaw_pm"],
+    "data": ["codex_dev", "gpt5_arch"],
+    "strategy": ["opus_cairo", "gemini_cto"],
+    "workflow": ["cowork_wf", "ralph_loop"]
+  }
+}
