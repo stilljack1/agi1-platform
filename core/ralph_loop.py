@@ -1,3 +1,9 @@
+from fastapi import FastAPI
+app = FastAPI()
+@app.get("/")
+def read_root():
+    return {"status": "AGI Platform Core Online", "loop": "Active"}
+
 #!/usr/bin/env python3
 """
 OpenClaw Complete v2.0 - Ralph Loop Agent
