@@ -27,7 +27,7 @@ from pathlib import Path
 from dataclasses import dataclass, field, asdict
 from enum import Enum
 
-from .agent_gateway import AgentGateway, create_gateway
+from agent_gateway import AgentGateway, create_gateway
 
 logger = logging.getLogger("openclaw.ralph")
 
